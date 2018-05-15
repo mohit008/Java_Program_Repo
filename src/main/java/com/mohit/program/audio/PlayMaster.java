@@ -15,7 +15,7 @@ public class PlayMaster extends JFrame {
     JPanel mainPanel;
     JButton play, stop;
 
-    static String soundPath = "/com/mohit/program/audio/sound/alarm.wav";
+    static String soundPath = "/alarm.wav";
 
     Clip clip;
     URL url;
