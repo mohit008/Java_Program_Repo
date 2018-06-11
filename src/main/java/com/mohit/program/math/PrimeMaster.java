@@ -103,4 +103,35 @@ public class PrimeMaster {
             System.out.println("--------------------------------------------------");
         }
     }
+    public void betweenRange() {
+        Scanner sc = new Scanner(System.in);
+        int line = sc.nextInt();
+        int end = sc.nextInt();
+        boolean result = false;
+        int prime_count =0;
+
+        if (line > 0) {
+            if (line == 1 || line == 2) {
+                prime_count = +1;
+                line = 3;
+            }
+            for (int s = line; s < end; s++) {
+                for (int i = 1; i < s - 1; i++) {
+                    int j = i+1;
+                    if (s % j != 0) {
+                        result = true;
+                        continue;
+                    }
+                    if (s % j == 0) {
+                        result =false;
+                        break;
+                    }
+                }
+                if (result) {
+                    prime_count++;
+                }
+            }
+        }
+        System.out.println(prime_count);
+    }
 }
