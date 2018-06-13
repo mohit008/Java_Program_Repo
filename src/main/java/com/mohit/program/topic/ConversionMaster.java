@@ -101,4 +101,24 @@ public class ConversionMaster {
         // int to hex
         String y = Integer.toHexString(2147483647);
     }
+    
+     public void BinaryToDecimal(int line) {
+        int x = line;
+        int sum = 0;
+        while (x / 10 != 0) {
+            x = x / 10;
+            sum = sum + 1;
+        }
+        x = line;
+        int add = 0;
+        for (int i = sum; i >= 0; i--) {
+            int pow = (int) Math.pow(10, i);
+            int place = (x / pow);
+            add = add + (place * (int) Math.pow(2, i));
+            int reduce = x - (place * pow);
+            x = reduce;
+        }
+        System.out.println(add);
+    }
+    
 }
